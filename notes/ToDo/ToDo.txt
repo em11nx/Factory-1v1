@@ -1,0 +1,9 @@
+ToDo:
+
+[x] - determine which direction to rotate conv based on mouse position (should prob in a sprate script)
+
+[] - filling in the gap between the current mouse position and new mouse position when rotating
+
+[x] - forcing the conv to confine to max belt based on direc
+
+[] - force to be in line with max conv
