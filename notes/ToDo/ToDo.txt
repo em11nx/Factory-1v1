@@ -7,3 +7,5 @@ ToDo:
 [x] - forcing the conv to confine to max belt based on direc
 
 [] - force to be in line with max conv
+
+[] - fix mouse error when behind max

@@ -86,12 +86,12 @@ if(curr_mode == "building"){
             var sign_of_curr_minus_orgin_y = sign(current_y_placement_round64 - origin_y_placement_round64);
             
             if(placement_dir == "left" || placement_dir == "right"){
-                for(var i = 64; i <= abs(max_x_placement_round64 - origin_x_placement_round64); i += 64){
+                for(var i = 0; i <= abs(max_x_placement_round64 - origin_x_placement_round64); i += 64){
                     conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
                 }
             }
             if(placement_dir == "up" || placement_dir == "down"){
-                for(var i = 64; i <= abs(max_y_placement_round64 - origin_y_placement_round64); i += 64){
+                for(var i = 0; i <= abs(max_y_placement_round64 - origin_y_placement_round64); i += 64){
                     conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
                 }
             }
@@ -105,7 +105,11 @@ if(curr_mode == "building"){
             max_conv = noone;
         }
         
-        curr_conv = conv_placement(placement_dir, placement_x_round64, placement_y_round64);
+        if(placement_dir == "up" || placement_dir == "down"){
+            curr_conv = conv_placement(placement_dir, origin_x_placement_round64, current_y_placement_round64);    
+        } else if(placement_dir == "left" || placement_dir == "right"){
+            curr_conv = conv_placement(placement_dir, current_x_placement_round64, origin_y_placement_round64);    
+        }
         
         //change based on direc facing
         if(placement_x_round64 > max_x_placement_round64 && placement_dir == "right"){
