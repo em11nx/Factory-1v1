@@ -87,22 +87,30 @@ if(curr_mode == "building"){
             
             if(placement_dir == "left" || placement_dir == "right"){
                 for(var i = 0; i <= abs(max_x_placement_round64 - origin_x_placement_round64); i += 64){
-                    conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
+                    curr_conv = conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
                 }
             }
             if(placement_dir == "up" || placement_dir == "down"){
                 for(var i = 0; i <= abs(max_y_placement_round64 - origin_y_placement_round64); i += 64){
-                    conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
+                    curr_conv = conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
                 }
             }
             
-            max_x_placement_round64 = origin_x_placement_round64;
-            max_y_placement_round64 = origin_y_placement_round64;
-            origin_x_placement_round64 = current_x_placement_round64;
-            origin_y_placement_round64 = current_y_placement_round64;
+            //this depends on direction
+            var last_ori_x = origin_x_placement_round64;
+            var last_ori_y = origin_y_placement_round64;
+            if(last_dir == "up" || last_dir == "down"){
+                origin_x_placement_round64 = origin_x_placement_round64;
+                origin_y_placement_round64 = max_y_placement_round64;
+            } else if(last_dir == "left" || last_dir == "right"){
+                origin_x_placement_round64 = max_x_placement_round64;
+                origin_y_placement_round64 = origin_y_placement_round64;
+            }
+            max_x_placement_round64 = last_ori_x;
+            max_y_placement_round64 = last_ori_y;
             
             max_conv.update_spr_with_given_direc(last_dir + "_" + placement_dir);
-            max_conv = noone;
+            max_conv = (curr_conv != undefined) ? curr_conv : last_conv;
         }
         
         if(placement_dir == "up" || placement_dir == "down"){
@@ -112,21 +120,24 @@ if(curr_mode == "building"){
         }
         
         //change based on direc facing
-        if(placement_x_round64 > max_x_placement_round64 && placement_dir == "right"){
-            max_x_placement_round64 = placement_x_round64;
-            max_conv = curr_conv;
-        }
-        if(placement_x_round64 < max_x_placement_round64 && placement_dir == "left"){
-            max_x_placement_round64 = placement_x_round64;
-            max_conv = curr_conv;
-        }
-        if(placement_y_round64 > max_y_placement_round64 && placement_dir == "down"){
-            max_y_placement_round64 = placement_y_round64;
-            max_conv = curr_conv;
-        }
-        if(placement_y_round64 < max_y_placement_round64 && placement_dir == "up"){
-            max_y_placement_round64 = placement_y_round64;
-            max_conv = curr_conv;
+        if(curr_conv != undefined){
+            if(current_x_placement_round64 >= max_x_placement_round64 && placement_dir == "right"){
+                max_x_placement_round64 = current_x_placement_round64;
+                max_conv = curr_conv;
+            }
+            if(current_x_placement_round64 <= max_x_placement_round64 && placement_dir == "left"){
+                max_x_placement_round64 = current_x_placement_round64;
+                max_conv = curr_conv;
+            }
+            if(current_y_placement_round64 >= max_y_placement_round64 && placement_dir == "down"){
+                max_y_placement_round64 = current_y_placement_round64;
+                max_conv = curr_conv;
+            }
+            if(current_y_placement_round64 <= max_y_placement_round64 && placement_dir == "up"){
+                max_y_placement_round64 = current_y_placement_round64;
+                max_conv = curr_conv;
+            }
+            last_conv = curr_conv;
         }
         //show_debug_message(string(curr_conv) + " : " + string(max_conv) + " : " + placement_dir);
     }
