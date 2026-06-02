@@ -18,7 +18,7 @@ if(can_move){
     if(x + move_hor + sprite_width/2 > room_width && move_hor > 0){
         move_hor = 0;
     }
-    if(x + move_hor - sprite_width/2 < 0 && move_hor < 0){
+    if(x + move_hor - sprite_width/2 <= 0 && move_hor < 0){
         move_hor = 0;
     }
     if(y + move_ver + sprite_height/2 > room_height && move_ver > 0){
@@ -86,28 +86,31 @@ if(curr_mode == "building"){
             var sign_of_curr_minus_orgin_y = sign(current_y_placement_round64 - origin_y_placement_round64);
             
             if(placement_dir == "left" || placement_dir == "right"){
-                for(var i = 0; i <= abs(max_x_placement_round64 - origin_x_placement_round64); i += 64){
+                for(var i = 0; i <= abs(current_x_placement_round64 - origin_x_placement_round64); i += 64){
                     curr_conv = conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
                 }
             }
             if(placement_dir == "up" || placement_dir == "down"){
-                for(var i = 0; i <= abs(max_y_placement_round64 - origin_y_placement_round64); i += 64){
+                for(var i = 0; i <= abs(current_y_placement_round64 - origin_y_placement_round64); i += 64){
                     curr_conv = conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
                 }
             }
             
-            //this depends on direction
             var last_ori_x = origin_x_placement_round64;
             var last_ori_y = origin_y_placement_round64;
             if(last_dir == "up" || last_dir == "down"){
                 origin_x_placement_round64 = origin_x_placement_round64;
                 origin_y_placement_round64 = max_y_placement_round64;
+                max_y_placement_round64 = current_y_placement_round64;
+                max_x_placement_round64 = current_x_placement_round64;
             } else if(last_dir == "left" || last_dir == "right"){
                 origin_x_placement_round64 = max_x_placement_round64;
                 origin_y_placement_round64 = origin_y_placement_round64;
+                max_x_placement_round64 = current_x_placement_round64;
+                max_y_placement_round64 = current_y_placement_round64;
             }
-            max_x_placement_round64 = last_ori_x;
-            max_y_placement_round64 = last_ori_y;
+            
+            
             
             max_conv.update_spr_with_given_direc(last_dir + "_" + placement_dir);
             max_conv = (curr_conv != undefined) ? curr_conv : last_conv;
@@ -121,19 +124,19 @@ if(curr_mode == "building"){
         
         //change based on direc facing
         if(curr_conv != undefined){
-            if(current_x_placement_round64 >= max_x_placement_round64 && placement_dir == "right"){
+            if(mouse_x >= max_x_placement_round64 && placement_dir == "right"){
                 max_x_placement_round64 = current_x_placement_round64;
                 max_conv = curr_conv;
             }
-            if(current_x_placement_round64 <= max_x_placement_round64 && placement_dir == "left"){
+            if(mouse_x <= max_x_placement_round64 && placement_dir == "left"){
                 max_x_placement_round64 = current_x_placement_round64;
                 max_conv = curr_conv;
             }
-            if(current_y_placement_round64 >= max_y_placement_round64 && placement_dir == "down"){
+            if(mouse_y >= max_y_placement_round64 && placement_dir == "down"){
                 max_y_placement_round64 = current_y_placement_round64;
                 max_conv = curr_conv;
             }
-            if(current_y_placement_round64 <= max_y_placement_round64 && placement_dir == "up"){
+            if(mouse_y <= max_y_placement_round64 && placement_dir == "up"){
                 max_y_placement_round64 = current_y_placement_round64;
                 max_conv = curr_conv;
             }
