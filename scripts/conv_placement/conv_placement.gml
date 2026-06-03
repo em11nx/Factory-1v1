@@ -59,7 +59,7 @@ function conv_placement(placement_dir, x_round, y_round){
             
             break;
         
-        case "left":
+        case "right":
             
             if(right_conv_faced_in) or (up_conv_faced_in && down_conv_faced_in){
                 break;
@@ -71,7 +71,7 @@ function conv_placement(placement_dir, x_round, y_round){
             
             break;
         
-        case "right":
+        case "left":
             
             if(left_conv_faced_in) or (up_conv_faced_in && down_conv_faced_in){
                 break;

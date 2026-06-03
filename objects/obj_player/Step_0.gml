@@ -60,6 +60,10 @@ if(curr_mode == "building"){
         idConvTemp = noone;
     }
     
+    if(mouse_check_button(mb_right) && overlapping_conv != idConvTemp){
+        instance_destroy(overlapping_conv);
+    }
+    
     if(mouse_check_button(mb_left)){
         
         instance_destroy(idConvTemp);
@@ -79,11 +83,13 @@ if(curr_mode == "building"){
             if(placement_dir == "left" || placement_dir == "right"){
                 for(var i = 0; i <= abs(current_x_placement_round64 - origin_x_placement_round64); i += 64){
                     curr_conv = conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
+                    if(curr_conv != undefined) { curr_conv.is_placed = true; }
                 }
             }
             if(placement_dir == "up" || placement_dir == "down"){
                 for(var i = 0; i <= abs(current_y_placement_round64 - origin_y_placement_round64); i += 64){
                     curr_conv = conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
+                    if(curr_conv != undefined) { curr_conv.is_placed = true; }
                 }
             }
             
@@ -92,23 +98,23 @@ if(curr_mode == "building"){
             if(last_dir == "up" || last_dir == "down"){
                 origin_x_placement_round64 = origin_x_placement_round64;
                 origin_y_placement_round64 = max_y_placement_round64;
-                max_y_placement_round64 = current_y_placement_round64;
-                max_x_placement_round64 = current_x_placement_round64;
             } else if(last_dir == "left" || last_dir == "right"){
                 origin_x_placement_round64 = max_x_placement_round64;
                 origin_y_placement_round64 = origin_y_placement_round64;
-                max_x_placement_round64 = current_x_placement_round64;
-                max_y_placement_round64 = current_y_placement_round64;
             }
+            max_x_placement_round64 = current_x_placement_round64;
+            max_y_placement_round64 = current_y_placement_round64;
             
             max_conv.update_spr_with_given_direc(last_dir + "_" + placement_dir);
             max_conv = (curr_conv != undefined) ? curr_conv : last_conv;
         }
         
         if (placement_dir == "up" || placement_dir == "down"){
-            curr_conv = conv_placement(placement_dir, origin_x_placement_round64, current_y_placement_round64);    
+            curr_conv = conv_placement(placement_dir, origin_x_placement_round64, current_y_placement_round64);
+            if(curr_conv != undefined) { curr_conv.is_placed = true; }
         } else if (placement_dir == "left" || placement_dir == "right"){
-            curr_conv = conv_placement(placement_dir, current_x_placement_round64, origin_y_placement_round64);    
+            curr_conv = conv_placement(placement_dir, current_x_placement_round64, origin_y_placement_round64);
+            if(curr_conv != undefined) { curr_conv.is_placed = true; }
         }
         
         //change based on direc facing
