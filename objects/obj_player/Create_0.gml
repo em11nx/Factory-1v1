@@ -22,8 +22,6 @@ curr_conv = noone;
 last_conv = noone;
 idConvTemp = 0;
 placement_dir = "down";
-placement_x_round64 = 0;
-placement_y_round64 = 0;
 clock_or_counter = "";
 
 #endregion

@@ -65,15 +65,6 @@ if(curr_mode == "building"){
         instance_destroy(idConvTemp);
         idConvTemp = noone;
         
-        if(placement_dir == "down" || placement_dir == "up"){
-            placement_x_round64 = origin_x_placement_round64;
-            placement_y_round64 = current_y_placement_round64;
-        }    
-        else if (placement_dir == "left" || placement_dir == "right"){ 
-            placement_y_round64 = origin_y_placement_round64;
-            placement_x_round64 = current_x_placement_round64;
-        }
-        
         var change_x = (origin_x_placement_round64 - current_x_placement_round64) != 0;
         var change_y = (origin_y_placement_round64 - current_y_placement_round64) != 0;
         var changed_needed = ((placement_dir == "down" || placement_dir == "up") && change_x) || ((placement_dir == "left" || placement_dir == "right") && change_y);
@@ -110,15 +101,13 @@ if(curr_mode == "building"){
                 max_y_placement_round64 = current_y_placement_round64;
             }
             
-            
-            
             max_conv.update_spr_with_given_direc(last_dir + "_" + placement_dir);
             max_conv = (curr_conv != undefined) ? curr_conv : last_conv;
         }
         
-        if(placement_dir == "up" || placement_dir == "down"){
+        if (placement_dir == "up" || placement_dir == "down"){
             curr_conv = conv_placement(placement_dir, origin_x_placement_round64, current_y_placement_round64);    
-        } else if(placement_dir == "left" || placement_dir == "right"){
+        } else if (placement_dir == "left" || placement_dir == "right"){
             curr_conv = conv_placement(placement_dir, current_x_placement_round64, origin_y_placement_round64);    
         }
         
@@ -142,7 +131,6 @@ if(curr_mode == "building"){
             }
             last_conv = curr_conv;
         }
-        //show_debug_message(string(curr_conv) + " : " + string(max_conv) + " : " + placement_dir);
     }
 }
 
