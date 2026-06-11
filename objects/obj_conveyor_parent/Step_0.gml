@@ -1,24 +1,21 @@
-if(instance_place(x, y, obj_iron_ore) != noone && is_placed){
-    switch (dir_faced) {
-    	
-        case "up":
-            instance_place(x, y, obj_iron_ore).y -= belt_speed;
-            break;
-        
-        case "down":
-            instance_place(x, y, obj_iron_ore).y += belt_speed;
-            break;
-        
-        case "left":
-            instance_place(x, y, obj_iron_ore).x -= belt_speed;
-            break;
-        
-        case "right":
-            instance_place(x, y, obj_iron_ore).x += belt_speed;
-            break;
-        
-        default:
-            show_error("Not implemted yet", true);
-            break;
+isholding_obj = (instance_place(x,y,obj_ore_parent) != noone);
+holding_obj_ref = isholding_obj ? instance_place(x,y,obj_ore_parent) : noone;
+
+if(isholding_obj && is_placed){ 
+    if(string_ends_with(dir_faced, "up") && instance_place(x_middle, y_middle-64, obj_conveyor_parent) != noone){
+        holding_obj_ref.y -= belt_speed;
+        if(holding_obj_ref.x != x_middle){ holding_obj_ref.x = x_middle; }
+    }
+    if(string_ends_with(dir_faced, "down") && instance_place(x_middle, y_middle+64, obj_conveyor_parent) != noone){
+        holding_obj_ref.y += belt_speed;
+        if(holding_obj_ref.x != x_middle){ holding_obj_ref.x = x_middle; }
+    }
+    if(string_ends_with(dir_faced, "left") && instance_place(x_middle-64, y_middle, obj_conveyor_parent) != noone){
+        holding_obj_ref.x -= belt_speed;
+        if(holding_obj_ref.y != y_middle){ holding_obj_ref.y = y_middle; }
+    }
+    if(string_ends_with(dir_faced, "right") && instance_place(x_middle+64, y_middle, obj_conveyor_parent) != noone){
+        holding_obj_ref.x += belt_speed;
+        if(holding_obj_ref.y != y_middle){ holding_obj_ref.y = y_middle; }
     }
 }

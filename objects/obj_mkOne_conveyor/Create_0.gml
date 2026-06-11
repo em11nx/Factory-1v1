@@ -1,5 +1,5 @@
 // Inherit the parent event
 event_inherited();
 
-belt_speed = 1;
+belt_speed = 2;
 mk = "1";
