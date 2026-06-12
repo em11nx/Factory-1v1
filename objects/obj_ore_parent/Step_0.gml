@@ -1,1 +1,1 @@
-
+if(instance_place(x,y,obj_conveyor_parent) == noone){ speed = 0; moving = false; }
