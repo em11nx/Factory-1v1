@@ -1,1 +1,1 @@
-if(instance_place(x,y,obj_conveyor_parent) == noone){ speed = 0; moving = false; }
+//if(instance_place(x,y,obj_conveyor_parent) != noone){ show_debug_message(string(instance_place(x,y,obj_conveyor_parent))); }
