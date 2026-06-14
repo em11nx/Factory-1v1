@@ -1,4 +1,4 @@
-function conv_placement(placement_dir, x_round, y_round){
+function single_conv_placement(placement_dir, x_round, y_round){
     
     //physical direction
     var down_conv = instance_place(x_round, y_round+32, obj_conveyor_parent);
@@ -87,7 +87,7 @@ function conv_placement(placement_dir, x_round, y_round){
             show_error($"Invaild direction sent to conv_placement \nCurrent value of placement_dir: {placement_dir}", true);
     }
     
-    if(instance_position(x_round, y_round, obj_mkOne_conveyor) == noone){
+    if(instance_position(x_round, y_round, obj_placed_obj) == noone){
         var placed_conv = instance_create_layer(x_round,y_round,"Instances",obj_mkOne_conveyor);
         placed_conv.dir_faced = placement_dir;
         placed_conv.update_spr();

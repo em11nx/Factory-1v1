@@ -7,9 +7,12 @@
   "overriddenProperties":[],
   "parent":{
     "name":"buildings",
-    "path":"folders/Objects/buildings.yy",
+    "path":"folders/Objects/placed_obj/buildings.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_placed_obj",
+    "path":"objects/obj_placed_obj/obj_placed_obj.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

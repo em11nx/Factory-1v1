@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"conv_placement",
+  "%Name":"conv_zoop",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"conv_placement",
+  "name":"conv_zoop",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"logistics",
-    "path":"folders/Objects/logistics.yy",
+    "path":"folders/Objects/placed_obj/logistics.yy",
   },
   "parentObjectId":{
     "name":"obj_conveyor_parent",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"single_conv_placement",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"single_conv_placement",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

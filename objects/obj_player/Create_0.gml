@@ -18,10 +18,11 @@ last_frame_y_placement_round64 = 0;
 max_x_placement_round64 = 0;
 max_y_placement_round64 = 0;
 max_conv = noone;
-curr_conv = noone;
+curr_obj_being_placed = noone;
 last_conv = noone;
-idConvTemp = 0;
+id_obj_temp = 0;
 placement_dir = "down";
+obj_getting_placed = "mkOne_conv";
 
 #endregion
 
