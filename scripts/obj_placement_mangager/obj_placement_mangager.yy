@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"obj_placement_mangager",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"placement",
+    "path":"folders/Scripts/placement.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

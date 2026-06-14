@@ -37,6 +37,14 @@ if(can_move){
 
 if(curr_mode == "building"){
     
+    if(mouse_wheel_up()){ placeable_list_num = (placeable_list_num > 0) ? placeable_list_num-1 : 0; }
+    if(mouse_wheel_down()){ placeable_list_num = (placeable_list_num < array_length(placeable_obj_list)-1) ? placeable_list_num+1 : array_length(placeable_obj_list)-1; }
+    obj_getting_placed = placeable_obj_list[placeable_list_num];
+    if(mouse_wheel_up() || mouse_wheel_down()){
+        instance_destroy(id_obj_temp);
+        id_obj_temp = noone;
+    }
+    
     current_x_placement_round64 = (mouse_x - mouse_x % 64) + 32;
     current_y_placement_round64 = (mouse_y - mouse_y % 64) + 32;
     
@@ -45,10 +53,10 @@ if(curr_mode == "building"){
         id_obj_temp = noone;
     }
     
-    var overlapping_conv = instance_position(current_x_placement_round64, current_y_placement_round64, obj_placed_obj);
-    if(overlapping_conv == noone){
+    var overlapping_obj = instance_position(current_x_placement_round64, current_y_placement_round64, obj_placed_obj);
+    if(overlapping_obj == noone){
         
-        id_obj_temp = single_conv_placement(placement_dir, current_x_placement_round64, current_y_placement_round64);
+        ghost_building(x,y);
         id_obj_temp.image_alpha = 0.5;
     }
     
@@ -58,8 +66,8 @@ if(curr_mode == "building"){
         id_obj_temp = noone;
     }
     
-    if(mouse_check_button(mb_right) && overlapping_conv != id_obj_temp){
-        instance_destroy(overlapping_conv);
+    if(mouse_check_button(mb_right) && overlapping_obj != id_obj_temp){
+        instance_destroy(overlapping_obj);
     }
     
     if(mouse_check_button(mb_left)){

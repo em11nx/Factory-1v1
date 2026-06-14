@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_counterclockwise_direc",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"direc",
+    "path":"folders/Scripts/direc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

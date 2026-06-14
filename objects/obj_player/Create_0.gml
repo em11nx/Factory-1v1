@@ -22,7 +22,11 @@ curr_obj_being_placed = noone;
 last_conv = noone;
 id_obj_temp = 0;
 placement_dir = "down";
-obj_getting_placed = "mkOne_conv";
+
+
+placeable_obj_list = ["mkOne_conv", "chest"];
+placeable_list_num = 0;
+obj_getting_placed = placeable_obj_list[placeable_list_num];
 
 #endregion
 

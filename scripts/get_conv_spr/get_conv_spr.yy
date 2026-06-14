@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"get_conv_spr",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"conv",
+    "path":"folders/Scripts/placement/conv.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

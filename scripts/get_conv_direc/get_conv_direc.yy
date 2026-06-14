@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"get_conv_direc",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_conv_direc",
+  "parent":{
+    "name":"conv",
+    "path":"folders/Scripts/placement/conv.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

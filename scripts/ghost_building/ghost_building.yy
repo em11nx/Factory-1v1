@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ghost_building",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ghost_building",
+  "parent":{
+    "name":"placement",
+    "path":"folders/Scripts/placement.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"conv_zoop",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"conv",
+    "path":"folders/Scripts/placement/conv.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

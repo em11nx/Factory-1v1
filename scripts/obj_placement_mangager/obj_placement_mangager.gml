@@ -9,5 +9,8 @@ function obj_placement_mangager(pla_x, pla_y){
                 if(curr_obj_being_placed != undefined) { curr_obj_being_placed.is_placed = true; }
             }
         }
+        if(obj_getting_placed == "chest"){
+            instance_create_layer(current_x_placement_round64, current_y_placement_round64, "Instances", obj_chest);
+        }
     }
 }
