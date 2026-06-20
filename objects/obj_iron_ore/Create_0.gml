@@ -1,5 +1,5 @@
 // Inherit the parent event
 event_inherited();
 
-name = "iron ore";
+name = "Iron Ore";
 melting_temp_F = 2800;
