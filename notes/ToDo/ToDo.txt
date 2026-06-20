@@ -1,11 +1,7 @@
 ToDo:
 
-[x] - determine which direction to rotate conv based on mouse position (should prob in a sprate script)
+[] - add UI for chest
 
-[] - filling in the gap between the current mouse position and new mouse position when rotating
+[] - make backend inventory for chest
 
-[x] - forcing the conv to confine to max belt based on direc
-
-[] - force to be in line with max conv
-
-[] - fix mouse error when behind max
+[] - connected the chest ui and inventory
