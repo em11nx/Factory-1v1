@@ -1,3 +1,6 @@
+/// @desc Places a shell object in the players build mode
+/// @param {Real} x Player x
+/// @param {Real} y Player y
 function ghost_building(x,y){
     with(instance_nearest(x,y, obj_player)){
         if(string_ends_with(obj_getting_placed ,"conv")){

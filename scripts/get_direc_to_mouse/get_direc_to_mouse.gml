@@ -1,3 +1,8 @@
+/// @desc Takes the current direction and finds which way the mouse is on the other axis
+/// @param {String} curr_dirc The current direction
+/// @param {Real} origin_mouse_x_round64 The rounded x value of the mouse
+/// @param {Real} origin_mouse_y_round64 The rounded y value of the mouse
+/// @return {String} The new direction
 function get_direc_to_mouse(curr_dirc, origin_mouse_x_round64, origin_mouse_y_round64){
     
     if(curr_dirc == "down" || curr_dirc == "up"){

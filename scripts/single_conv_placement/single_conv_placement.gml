@@ -1,3 +1,8 @@
+/// @desc Places down a single conveyor belt
+/// @param {String} placement_dir The direction that the belt will face
+/// @param {Real} x_round Rounded x
+/// @param {Real} y_round Rounded y
+/// @return {String} The corrected placement direction
 function single_conv_placement(placement_dir, x_round, y_round){
     
     placement_dir = get_conv_direc(placement_dir, x_round, y_round);

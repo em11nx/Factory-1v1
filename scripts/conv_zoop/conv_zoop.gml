@@ -1,3 +1,6 @@
+/// @desc Handles the zoop function of conveyor belts during placement
+/// @param {Real} pla_x Player x
+/// @param {Real} pla_y Player y
 function conv_zoop(pla_x, pla_y){
     with(instance_nearest(pla_x,pla_y, obj_player)){
         var last_dir = placement_dir;

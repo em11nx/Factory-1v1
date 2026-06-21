@@ -1,3 +1,6 @@
+/// @desc Places the desired object during player build mode
+/// @param {Real} pla_x Player x
+/// @param {Real} pla_y Player y
 function obj_placement_mangager(pla_x, pla_y){
     if((instance_position(mouse_x, mouse_y, obj_placed_obj) == noone)){
         with(instance_nearest(pla_x, pla_y, obj_player)){

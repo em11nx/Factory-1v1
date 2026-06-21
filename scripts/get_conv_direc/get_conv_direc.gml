@@ -1,3 +1,8 @@
+/// @desc Checks which direction a belt is going
+/// @param {String} placement_dir The direction that the belt will face
+/// @param {Real} x_round Rounded x
+/// @param {Real} y_round Rounded y
+/// @return {String} The corrected placement direction
 function get_conv_direc(placement_dir, x_round, y_round){
     //physical direction
     var down_conv = instance_place(x_round, y_round+32, obj_conveyor_parent);

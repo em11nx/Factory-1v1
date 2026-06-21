@@ -1,4 +1,6 @@
-// Param: direction(str)   return: direction(str)
+/// @desc Finds next the clockwise direction
+/// @param {String} curr_direc The current direction
+/// @return {String} The next direction
 function get_clockwise_direc(curr_direc){
     switch (curr_direc) {
     	
