@@ -76,6 +76,7 @@
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"temp_iron","path":"sprites/temp_iron/temp_iron.yy",},},
     {"id":{"name":"temp_player","path":"sprites/temp_player/temp_player.yy",},},
+    {"id":{"name":"ui_box","path":"sprites/ui_box/ui_box.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

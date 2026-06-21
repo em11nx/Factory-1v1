@@ -1,6 +1,7 @@
 #region State vars
 
 curr_mode = "none";
+in_ui = false;
 can_change_modes = true;
 can_move = true;
 

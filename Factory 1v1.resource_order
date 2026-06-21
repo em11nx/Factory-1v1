@@ -46,5 +46,6 @@
     {"name":"conv_mk1","order":3,"path":"sprites/conv_mk1/conv_mk1.yy",},
     {"name":"Sprite7","order":3,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"temp_player","order":1,"path":"sprites/temp_player/temp_player.yy",},
+    {"name":"ui_box","order":5,"path":"sprites/ui_box/ui_box.yy",},
   ],
 }

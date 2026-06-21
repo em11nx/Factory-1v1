@@ -1,2 +1,5 @@
-add_item_to_inventory(inventory, 0, 0, "Iron ore");
-show_debug_message(inventory);
+gui_open = true;
+var player = instance_nearest(x, y, obj_player);
+player.can_move = false;
+player.curr_mode = "ui";
+player.in_ui = true;

@@ -110,7 +110,6 @@ if(curr_mode == "building"){
     }
 }
 
-
 #region mode changing
 
 can_change_modes = true;
@@ -124,6 +123,15 @@ if(curr_mode == "none") and can_change_modes{
 if(curr_mode == "building") and can_change_modes{
     if(keyboard_check_pressed(ord("B")) or keyboard_check_pressed(vk_escape)){
         instance_destroy(id_obj_temp);
+        curr_mode = "none";
+        can_change_modes = false;
+    }
+}
+
+if(curr_mode == "ui") and can_change_modes{
+    if(keyboard_check_pressed(vk_escape)){
+        in_ui = false;
+        can_move = true;
         curr_mode = "none";
         can_change_modes = false;
     }
