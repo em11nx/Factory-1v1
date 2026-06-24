@@ -1,7 +1,6 @@
 #region State vars
 
 curr_mode = "none";
-in_ui = false;
 can_change_modes = true;
 can_move = true;
 
@@ -42,6 +41,7 @@ max_view_y = room_height - camera_get_view_height(view_camera[0]);
 
 #region Inventory vars
 
-inventory = create_inventory(8, 5);
+inventory = create_inventory(5, 8);
+inventory_open = false;
 
 #endregion

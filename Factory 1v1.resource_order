@@ -23,6 +23,7 @@
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"conv","order":2,"path":"folders/Sprites/conv.yy",},
     {"name":"mk1","order":1,"path":"folders/Sprites/conv/mk1.yy",},
+    {"name":"ui","order":6,"path":"folders/Sprites/ui.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
@@ -46,6 +47,7 @@
     {"name":"conv_mk1","order":3,"path":"sprites/conv_mk1/conv_mk1.yy",},
     {"name":"Sprite7","order":3,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"temp_player","order":1,"path":"sprites/temp_player/temp_player.yy",},
-    {"name":"ui_box","order":5,"path":"sprites/ui_box/ui_box.yy",},
+    {"name":"ui_slot_selected","order":1,"path":"sprites/ui_slot_selected/ui_slot_selected.yy",},
+    {"name":"ui_slot","order":2,"path":"sprites/ui_slot/ui_slot.yy",},
   ],
 }
