@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"get_direc_to_mouse",
+  "%Name":"sc_direction",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"get_direc_to_mouse",
+  "name":"sc_direction",
   "parent":{
-    "name":"direc",
-    "path":"folders/Scripts/direc.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

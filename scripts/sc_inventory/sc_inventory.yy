@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"get_conv_spr",
+  "%Name":"sc_inventory",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"get_conv_spr",
+  "name":"sc_inventory",
   "parent":{
-    "name":"conv",
-    "path":"folders/Scripts/placement/conv.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

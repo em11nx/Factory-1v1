@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"get_counterclockwise_direc",
+  "%Name":"sc_conv_state",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"get_counterclockwise_direc",
+  "name":"sc_conv_state",
   "parent":{
-    "name":"direc",
-    "path":"folders/Scripts/direc.yy",
+    "name":"placement",
+    "path":"folders/Scripts/placement.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -41,7 +41,7 @@ max_view_y = room_height - camera_get_view_height(view_camera[0]);
 
 #region Inventory vars
 
-inventory = create_inventory(5, 8);
+inventory = create_inventory(6, 8);
 inventory_open = false;
 
 #endregion

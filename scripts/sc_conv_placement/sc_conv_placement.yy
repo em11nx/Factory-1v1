@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"create_inventory",
+  "%Name":"sc_conv_placement",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_inventory",
+  "name":"sc_conv_placement",
   "parent":{
-    "name":"inventory",
-    "path":"folders/Scripts/inventory.yy",
+    "name":"placement",
+    "path":"folders/Scripts/placement.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

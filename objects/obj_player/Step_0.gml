@@ -58,9 +58,8 @@ if(curr_mode == "building") and can_change_modes{
 }
 
 if(curr_mode == "inventory") and can_change_modes{
-    if(keyboard_check_pressed(vk_escape)){
-        in_ui = false;
-        can_move = true;
+    if(keyboard_check_pressed(vk_escape) or keyboard_check_pressed(ord("E"))){
+        inventory_open = false;
         curr_mode = "none";
         can_change_modes = false;
     }
