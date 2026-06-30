@@ -26,16 +26,16 @@ function conv_zoop(pla_x, pla_y){
         var sign_of_curr_minus_orgin_y = sign(current_y_placement_round64 - origin_y_placement_round64);
         
         if(placement_dir == "left" || placement_dir == "right"){
-               for(var i = 0; i <= abs(current_x_placement_round64 - origin_x_placement_round64); i += 64){
-                   curr_obj_being_placed = single_conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
-                   if(curr_obj_being_placed != undefined) { curr_obj_being_placed.is_placed = true; }
-               }
+            for(var i = 0; i <= abs(current_x_placement_round64 - origin_x_placement_round64); i += 64){ 
+                curr_obj_being_placed = single_conv_placement(placement_dir, origin_x_placement_round64+(i*sign_of_curr_minus_orgin_x), max_y_placement_round64);
+                if(curr_obj_being_placed != undefined) { curr_obj_being_placed.is_placed = true; }
+            }
         }
         if(placement_dir == "up" || placement_dir == "down"){
-               for(var i = 0; i <= abs(current_y_placement_round64 - origin_y_placement_round64); i += 64){
-                   curr_obj_being_placed = single_conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
-                   if(curr_obj_being_placed != undefined) { curr_obj_being_placed.is_placed = true; }
-               }
+            for(var i = 0; i <= abs(current_y_placement_round64 - origin_y_placement_round64); i += 64){
+                curr_obj_being_placed = single_conv_placement(placement_dir, max_x_placement_round64, origin_y_placement_round64+(i*sign_of_curr_minus_orgin_y));
+                if(curr_obj_being_placed != undefined) { curr_obj_being_placed.is_placed = true; }
+            }
         }
         
         var last_ori_x = origin_x_placement_round64;
@@ -54,4 +54,3 @@ function conv_zoop(pla_x, pla_y){
         max_conv = (curr_obj_being_placed != undefined) ? curr_obj_being_placed : last_conv;
     }
 }
-
