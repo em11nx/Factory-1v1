@@ -15,8 +15,8 @@ function create_inventory(rows, cols){
 
 /// @desc Checks if an inventory slot is full of an item
 /// @param {Array<Array<Array<Any*>>>} inventory Inventory being added to
-/// @param {real} row Int of row
-/// @param {real} col Int of col
+/// @param {Real} row Int of row
+/// @param {Real} col Int of col
 /// @param {String} item_name Name of item being added
 /// @return {Bool} Returns true if full, false if not
 function is_item_slot_full(inventory, row, col, item_name){
@@ -25,10 +25,10 @@ function is_item_slot_full(inventory, row, col, item_name){
     }
 }
 
-/// @desc Checks if you can add an item to an inventory slot
+/// @desc Checks if you can add an item to an inventory slot and adds it
 /// @param {Array<Array<Array<Any*>>>} inventory Inventory being added to
-/// @param {real} row Int of row
-/// @param {real} col Int of col
+/// @param {Real} row Int of row
+/// @param {Real} col Int of col
 /// @param {String} item_name Name of item being added
 /// @return {Bool} True if it added the item, false if it did not add the item
 function add_item_to_inventory(inventory, row, col, item_name){
@@ -43,4 +43,41 @@ function add_item_to_inventory(inventory, row, col, item_name){
         inventory[row][col][1]++;
     }
     return true;
+}
+
+/// @desc Checks if you can remove an item to an inventory slot and removes it
+/// @param {Array<Array<Array<Any*>>>} inventory Inventory being removed from
+/// @param {Real} row Int of row
+/// @param {Real} col Int of col
+/// @return {Bool} True if it removed the item, false if it did not remove the item
+function remove_item_from_inventory(inventory, row, col){
+    if(inventory[row][col][0] != 0){ return false; }
+    
+    if(inventory[row][col][1] > 1){
+        inventory[row][col][1]--;
+        return true;
+    }else if (inventory[row][col][1] == 1){
+        inventory[row][col][0] = 0;
+        inventory[row][col][1] = 0;
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/// @desc Removes the entire stack of items from an inventory slot
+/// @param {Array<Array<Array<Any*>>>} inventory Inventory being added to
+/// @param {Real} row Int of row
+/// @param {Real} col Int of col
+/// @return {Array<String,Real>} Contents of the slot
+function get_all_items_from_inventory_slot(inventory, row, col){
+    var item_name = inventory[row][col][0];
+    var item_count = inventory[row][col][1];
+    var item = [item_name, item_count];
+    if(item_name != 0){
+        inventory[row][col][0] = 0;
+        inventory[row][col][1] = 0;
+        return item;
+    }
+    return [0,0];
 }
