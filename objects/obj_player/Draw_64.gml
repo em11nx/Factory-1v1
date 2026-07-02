@@ -136,4 +136,10 @@ if(inventory_open || other_inventory_open){
             }
         }
     }
+    
+    if(is_mouse_holding_item){
+        if(mouse_holding_content[0] == "Iron ore"){
+            draw_sprite(temp_iron, 0, mouse_x, mouse_y);
+        }
+    }
 }
