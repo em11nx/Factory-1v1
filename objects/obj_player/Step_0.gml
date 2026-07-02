@@ -68,6 +68,14 @@ if(curr_mode == "inventory") and can_change_modes{
 
 #endregion
 
+if(curr_mode == "none"){
+    if(mouse_check_button_pressed(mb_left) && instance_place(mouse_x, mouse_y, obj_iron_ore)){
+        var ore_obj = instance_place(mouse_x, mouse_y, obj_iron_ore);
+        instance_destroy(ore_obj);
+        add_item_to_inventory(inventory, 0, 0, "Iron ore");
+    }
+}
+
 if(curr_mode == "building"){
     
     if(mouse_wheel_up())
