@@ -31,7 +31,7 @@ function is_item_slot_full(inventory, row, col, item_name){
 /// @param {Real} col Int of col
 /// @param {String} item_name Name of item being added
 /// @return {Bool} True if it added the item, false if it did not add the item
-function add_item_to_inventory(inventory, row, col, item_name){
+function add_item_to_inventory_slot(inventory, row, col, item_name){
     if(inventory[row][col][0] == 0){
         inventory[row][col][0] = item_name;
         inventory[row][col][1]++;
@@ -43,6 +43,21 @@ function add_item_to_inventory(inventory, row, col, item_name){
         inventory[row][col][1]++;
     }
     return true;
+}
+
+/// @desc Places an item into a inventory at the first avalible slot
+/// @param {Array<Array<Array<Any*>>>} inventory Inventory being added to
+/// @param {String} item_name Name of item being added
+function input_item_to_inventory(inventory, item_name){
+    var inputed = false;
+    var r = 0;
+    var c = 0;
+    while(!inputed){
+        inputed = add_item_to_inventory_slot(inventory, r, c, item_name);
+        show_debug_message(inputed);
+        if(c == array_length(inventory[r])){ c = 0; r++; }
+        else{ c++; }
+    }
 }
 
 /// @desc Checks if you can remove an item to an inventory slot and removes it
