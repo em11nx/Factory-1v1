@@ -1,8 +1,38 @@
+var sprite_size = 64;
+var outline_size = 4;
+var padding = 4;
+
+if(curr_mode == "building"){
+    var num_of_building_preview = 2;
+    var x_max = (sprite_size + padding*2 + outline_size*2)*num_of_building_preview + padding*3 + outline_size*num_of_building_preview;
+    var y_max = sprite_size + outline_size*4 + padding*4;
+    draw_sprite_stretched(
+        ui_box, 0,
+        0, 0,
+        x_max, y_max
+    );
+    var place
+    for(var i = 0; i < num_of_building_preview; i++){
+        draw_sprite_stretched(
+            ui_slot, 0,
+            (sprite_size + padding*2 + outline_size*2)*i + padding*i + outline_size*2,
+            outline_size + padding,
+            sprite_size + padding*2 + outline_size*2, sprite_size + padding*2 + outline_size*2
+        );
+        var array_place = i;
+        while(array_place >= array_length(placeable_sprite_list)){
+            array_place -= array_length(placeable_sprite_list);
+        }
+        draw_sprite(
+            placeable_sprite_list[array_place], 0,
+            (sprite_size + padding*3 + outline_size*2)*i + sprite_size/2 + padding*4,
+            outline_size + padding + sprite_size/2 + outline_size*2
+        );
+    }
+}
+
 if(inventory_open || other_inventory_open){
     #region drawing inventory
-    var sprite_size = 64;
-    var outline_size = 4;
-    var padding = 4;
     var num_inventory_rows = array_length(inventory);
     var num_inventory_cols = array_length(inventory[0]);
     var inventory_x_max = ((sprite_size + outline_size) * num_inventory_cols) + padding*(num_inventory_cols+3);

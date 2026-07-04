@@ -25,6 +25,7 @@ placement_dir = "down";
 
 
 placeable_obj_list = ["mkOne_conv", "chest"];
+placeable_sprite_list = [conv_mk1, chest];
 placeable_list_num = 0;
 obj_getting_placed = placeable_obj_list[placeable_list_num];
 
