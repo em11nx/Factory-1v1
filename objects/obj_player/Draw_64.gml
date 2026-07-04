@@ -113,7 +113,7 @@ if(inventory_open || other_inventory_open){
                 if(mouse_holding_content[0] != 0){ is_mouse_holding_item = true; }
             }else{
                 if(mouse_holding_content[0] != 0){
-                    var added_item = add_item_to_inventory_slot(inventory, sslot_r, sslot_c, mouse_holding_content[0]);
+                    var added_item = add_item_to_inventory_slot(inventory, sslot_r, sslot_c, mouse_holding_content[0], mouse_holding_content[1]);
                     if(added_item){
                         is_mouse_holding_item = false;
                         mouse_holding_content = [0, 0];
@@ -127,7 +127,7 @@ if(inventory_open || other_inventory_open){
                 if(mouse_holding_content[0] != 0){ is_mouse_holding_item = true; }
             }else{
                 if(mouse_holding_content[0] != 0){
-                    var added_item = add_item_to_inventory_slot(other_inventory, other_sslot_r, other_sslot_c, mouse_holding_content[0]);
+                    var added_item = add_item_to_inventory_slot(other_inventory, other_sslot_r, other_sslot_c, mouse_holding_content[0], mouse_holding_content[1]);
                     if(added_item){
                         is_mouse_holding_item = false;
                         mouse_holding_content = [0, 0];
@@ -139,7 +139,6 @@ if(inventory_open || other_inventory_open){
     
     if(is_mouse_holding_item){
         if(mouse_holding_content[0] == "Iron ore"){
-            show_debug_message(mouse_holding_content);
             draw_sprite(temp_iron, 0, mouse_x, mouse_y);
         }
     }

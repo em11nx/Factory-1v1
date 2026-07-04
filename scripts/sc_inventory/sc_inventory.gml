@@ -30,17 +30,18 @@ function is_item_slot_full(inventory, row, col, item_name){
 /// @param {Real} row Int of row
 /// @param {Real} col Int of col
 /// @param {String} item_name Name of item being added
+/// @param {Real} num_of_times Number of times the item is being added
 /// @return {Bool} True if it added the item, false if it did not add the item
-function add_item_to_inventory_slot(inventory, row, col, item_name){
+function add_item_to_inventory_slot(inventory, row, col, item_name, num_of_times){
     if(inventory[row][col][0] == 0){
         inventory[row][col][0] = item_name;
-        inventory[row][col][1]++;
+        inventory[row][col][1] += num_of_times;
     }
     else{
         if(inventory[row][col][0] != item_name || is_item_slot_full(inventory, row, col, item_name)){
             return false;
         }
-        inventory[row][col][1]++;
+        inventory[row][col][1] += num_of_times;
     }
     return true;
 }
@@ -48,13 +49,22 @@ function add_item_to_inventory_slot(inventory, row, col, item_name){
 /// @desc Places an item into a inventory at the first avalible slot
 /// @param {Array<Array<Array<Any*>>>} inventory Inventory being added to
 /// @param {String} item_name Name of item being added
-function input_item_to_inventory(inventory, item_name){
+/// @param {Real} num_of_times Number of times the item is being added
+function input_item_to_inventory(inventory, item_name, num_of_times){
+    var placed = false;
+    for(var r = 0; r < array_length(inventory); r++) {
+    	for(var c = 0; c < array_length(inventory[r]); c++){
+            if(inventory[r][c][0] == item_name){
+                add_item_to_inventory_slot(inventory, r, c, item_name, num_of_times);
+                placed = true;
+            }
+        }
+    }
     var inputed = false;
     var r = 0;
     var c = 0;
-    while(!inputed){
-        inputed = add_item_to_inventory_slot(inventory, r, c, item_name);
-        show_debug_message(inputed);
+    while(!inputed && !placed){
+        inputed = add_item_to_inventory_slot(inventory, r, c, item_name, num_of_times);
         if(c == array_length(inventory[r])){ c = 0; r++; }
         else{ c++; }
     }
