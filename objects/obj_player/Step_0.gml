@@ -79,9 +79,10 @@ if(curr_mode == "none"){
 if(curr_mode == "building"){
     
     if(mouse_wheel_up())
-        { placeable_list_num = (placeable_list_num > 0) ? placeable_list_num-1 : 0; }
+        placeable_list_num = (placeable_list_num > 0) ? placeable_list_num-1 : array_length(placeable_obj_list)-1;
+    
     if(mouse_wheel_down())
-        { placeable_list_num = (placeable_list_num < array_length(placeable_obj_list)-1) ? placeable_list_num+1 : array_length(placeable_obj_list)-1; }
+        placeable_list_num = (placeable_list_num < array_length(placeable_obj_list)-1) ? placeable_list_num+1 : 0;
     
     obj_getting_placed = placeable_obj_list[placeable_list_num];
      if(mouse_wheel_up() || mouse_wheel_down()){
