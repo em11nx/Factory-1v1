@@ -63,6 +63,7 @@ if(curr_mode == "inventory") and can_change_modes{
         other_inventory_open = false;
         curr_mode = "none";
         can_change_modes = false;
+        other_inventory_id = noone;
     }
 }
 

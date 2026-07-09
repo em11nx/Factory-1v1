@@ -42,7 +42,7 @@ max_view_y = room_height - camera_get_view_height(view_camera[0]);
 
 #region Inventory vars
 
-inventory = create_inventory(6, 8);
+inventory = create_inventory(8, 8);
 add_item_to_inventory_slot(inventory, 0,1,"Iron ore", 1);
 inventory_open = false;
 other_inventory_open = false;

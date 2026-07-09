@@ -1,1 +1,1 @@
-inventory = create_inventory(2,2);
+inventory = create_inventory(4,5);

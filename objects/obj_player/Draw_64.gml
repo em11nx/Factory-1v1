@@ -4,7 +4,8 @@ var padding = 4;
 
 if(curr_mode == "building"){
     var num_of_building_preview = array_length(placeable_obj_list);
-    var x_max = (sprite_size + padding*2 + outline_size*2)*num_of_building_preview + padding*3 + outline_size*num_of_building_preview;
+    var sprite_with_padding_and_outline = (sprite_size + padding*2 + outline_size*2);
+    var x_max = sprite_with_padding_and_outline*num_of_building_preview + padding*3 + outline_size*num_of_building_preview;
     var y_max = sprite_size + outline_size*4 + padding*4;
     draw_sprite_stretched(
         ui_box, 0,
@@ -16,16 +17,16 @@ if(curr_mode == "building"){
         if(i == placeable_list_num){
             draw_sprite_stretched(
                 ui_slot_selected, 0,
-                (sprite_size + padding*2 + outline_size*2)*i + padding*i + outline_size*2,
+                sprite_with_padding_and_outline*i + padding*i + outline_size*2,
                 outline_size + padding,
-                sprite_size + padding*2 + outline_size*2, sprite_size + padding*2 + outline_size*2
+                sprite_with_padding_and_outline, sprite_with_padding_and_outline
             );
         }else{
             draw_sprite_stretched(
                 ui_slot, 0,
-                (sprite_size + padding*2 + outline_size*2)*i + padding*i + outline_size*2,
+                sprite_with_padding_and_outline*i + padding*i + outline_size*2,
                 outline_size + padding,
-                sprite_size + padding*2 + outline_size*2, sprite_size + padding*2 + outline_size*2
+                sprite_with_padding_and_outline, sprite_with_padding_and_outline
             );
         }
         var array_place = i;
@@ -49,7 +50,7 @@ if(inventory_open || other_inventory_open){
     
     //inventory bg
     draw_sprite_stretched(ui_box, 0, sprite_size, sprite_size, inventory_x_max, inventory_y_max);
-    draw_sprite_stretched(ui_box, 0, sprite_size+inventory_x_max+padding, sprite_size, inventory_x_max+sprite_size+padding, inventory_y_max)
+    draw_sprite_stretched(ui_box, 0, sprite_size+inventory_x_max+padding, sprite_size, inventory_x_max, inventory_y_max)
     
     var sslot_r = -1;
     var sslot_c = -1;
