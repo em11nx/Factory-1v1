@@ -12,7 +12,7 @@ if(curr_mode == "building"){
         0, 0,
         x_max, y_max
     );
-    var place
+    
     for(var i = 0; i < num_of_building_preview; i++){
         if(i == placeable_list_num){
             draw_sprite_stretched(
@@ -33,10 +33,11 @@ if(curr_mode == "building"){
         while(array_place >= array_length(placeable_sprite_list)){
             array_place -= array_length(placeable_sprite_list);
         }
-        draw_sprite(
+        draw_sprite_stretched(
             placeable_sprite_list[array_place], 0,
-            (sprite_size + padding*3 + outline_size*2)*i + sprite_size/2 + padding*4,
-            outline_size + padding + sprite_size/2 + outline_size*2
+            (sprite_size + padding*3 + outline_size*2)*i + padding*4,
+            outline_size + padding + outline_size*2,
+            sprite_size, sprite_size
         );
     }
 }

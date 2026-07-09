@@ -16,6 +16,9 @@ function obj_placement_mangager(pla_x, pla_y){
             if(obj_getting_placed == "chest"){
                 instance_create_layer(current_x_placement_round64, current_y_placement_round64, "Instances", obj_chest);
             }
+            if(obj_getting_placed == "miner"){
+                instance_create_layer(current_x_placement_round64, current_y_placement_round64, "Instances", obj_miner);
+            }
         }
     }
 }
@@ -36,6 +39,10 @@ function ghost_building(x,y){
         if(obj_getting_placed == "chest"){
             id_obj_temp = instance_create_layer(current_x_placement_round64, current_y_placement_round64, "Instances", shell_obj);
             id_obj_temp.sprite_index = chest;
+        }
+        if(obj_getting_placed == "miner"){
+            id_obj_temp = instance_create_layer(current_x_placement_round64, current_y_placement_round64, "Instances", shell_obj);
+            id_obj_temp.sprite_index = miner;
         }
     }
 }

@@ -25,6 +25,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_miner","order":1,"path":"objects/obj_miner/obj_miner.yy",},
     {"name":"obj_mkOne_conveyor","order":1,"path":"objects/obj_mkOne_conveyor/obj_mkOne_conveyor.yy",},
     {"name":"obj_ore_parent","order":1,"path":"objects/obj_ore_parent/obj_ore_parent.yy",},
     {"name":"obj_placed_obj","order":2,"path":"objects/obj_placed_obj/obj_placed_obj.yy",},
@@ -38,6 +39,7 @@
     {"name":"conv_mk1_turn_1","order":4,"path":"sprites/conv_mk1_turn_1/conv_mk1_turn_1.yy",},
     {"name":"conv_mk1_turn_2","order":5,"path":"sprites/conv_mk1_turn_2/conv_mk1_turn_2.yy",},
     {"name":"conv_mk1","order":3,"path":"sprites/conv_mk1/conv_mk1.yy",},
+    {"name":"miner","order":7,"path":"sprites/miner/miner.yy",},
     {"name":"Sprite7","order":3,"path":"sprites/Sprite7/Sprite7.yy",},
     {"name":"temp_player","order":1,"path":"sprites/temp_player/temp_player.yy",},
     {"name":"ui_slot_selected","order":1,"path":"sprites/ui_slot_selected/ui_slot_selected.yy",},
