@@ -1,5 +1,5 @@
-last_frame_x_placement_round64 = current_x_placement_round64;
-last_frame_y_placement_round64 = current_y_placement_round64;
+last_frame_x = mouse_x;
+last_frame_y = mouse_y;
 
 #region Moves the view with room limits
 

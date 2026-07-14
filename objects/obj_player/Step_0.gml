@@ -52,6 +52,7 @@ if(curr_mode == "none") and can_change_modes{
 if(curr_mode == "building") and can_change_modes{
     if(keyboard_check_pressed(ord("B")) or keyboard_check_pressed(vk_escape)){
         instance_destroy(id_obj_temp);
+        id_obj_temp = noone;
         curr_mode = "none";
         can_change_modes = false;
     }
@@ -79,6 +80,8 @@ if(curr_mode == "none"){
 
 if(curr_mode == "building"){
     
+    var current_sprite_size = sprite_get_width(placeable_sprite_list[placeable_list_num]);
+    
     if(mouse_wheel_up())
         placeable_list_num = (placeable_list_num > 0) ? placeable_list_num-1 : array_length(placeable_obj_list)-1;
     
@@ -94,16 +97,18 @@ if(curr_mode == "building"){
     current_x_placement_round64 = (mouse_x - mouse_x % 64) + 32;
     current_y_placement_round64 = (mouse_y - mouse_y % 64) + 32;
     
-    if(current_x_placement_round64 != last_frame_x_placement_round64) or (current_y_placement_round64 != last_frame_y_placement_round64){
-        instance_destroy(id_obj_temp);
-        id_obj_temp = noone;
+    if(id_obj_temp != noone){
+        if(should_ghost_move(id_obj_temp.x, id_obj_temp.y,
+            mouse_x, mouse_y, current_sprite_size)){
+            
+            instance_destroy(id_obj_temp);
+            id_obj_temp = noone;
+        }
     }
     
-    var overlapping_obj = instance_position(current_x_placement_round64, current_y_placement_round64, obj_placed_obj);
+    var overlapping_obj = check_overlap(current_x_placement_round64, current_y_placement_round64, current_sprite_size, obj_placed_obj);
     if(overlapping_obj == noone){
-        
         ghost_building(x,y);
-        id_obj_temp.image_alpha = 0.5;
     }
     
     if(keyboard_check_pressed(ord("R")) && !mouse_check_button(mb_left)){
@@ -156,3 +161,4 @@ if(curr_mode == "building"){
 if(curr_mode == "inventory"){
     inventory_open = true;
 }
+
