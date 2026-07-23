@@ -58,6 +58,5 @@ function check_overlap(px, py, sprite_size, obj){
 }
 
 function should_ghost_move(px, py, cx, cy, sprite_size){
-    show_debug_message(abs(cx-px));
     return abs(cx-px) > sprite_size/4 || abs(cy-py) > sprite_size/4
 }
