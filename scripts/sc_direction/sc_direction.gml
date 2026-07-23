@@ -69,3 +69,20 @@ function get_counterclockwise_direc(curr_direc){
             show_error($"Invalid direction sent to get_counterclockwise_direc \n direc val: {curr_direc}", true);
     }
 }
+
+function get_random_direc(){
+    switch (irandom(3)) {
+    	
+        case 0:
+            return "up";
+            
+        case 1:
+            return "down";
+        
+        case 2:
+            return "right";
+        
+        case 3:
+            return "left";
+    }
+}
