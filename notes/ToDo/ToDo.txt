@@ -1,7 +1,0 @@
-ToDo:
-
-[] - add UI for chest
-
-[] - make backend inventory for chest
-
-[] - connected the chest ui and inventory
