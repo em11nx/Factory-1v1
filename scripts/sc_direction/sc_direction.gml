@@ -86,3 +86,16 @@ function get_random_direc(){
             return "left";
     }
 }
+
+function string_dir_to_num(direc){
+    switch (direc) {
+    	case "down":
+            return 0;
+        case "left":
+            return 90;
+        case "up":
+            return 180;
+        case "right":
+            return 270;
+    }
+}

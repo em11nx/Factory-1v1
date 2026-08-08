@@ -27,9 +27,9 @@ if(can_move){
     if(y + move_ver - sprite_height/2 < 0 && move_ver < 0){
         move_ver = 0;
     }
-
     
-    move_and_collide(move_hor*delta_time/5000, move_ver*delta_time/5000, obj_smelter);
+    
+    move_and_collide(move_hor*delta_time/5000, move_ver*delta_time/5000, layer_tilemap_get_id("layer_buildings"));
     
 }
 
@@ -108,7 +108,7 @@ if(curr_mode == "building"){
     
     var overlapping_obj = check_overlap(current_x_placement_round64, current_y_placement_round64, current_sprite_size, obj_placed_obj);
     if(overlapping_obj == noone){
-        ghost_building(x,y);
+        ghost_building(x,y, self);
     }
     
     if(keyboard_check_pressed(ord("R")) && !mouse_check_button(mb_left)){
@@ -134,7 +134,7 @@ if(curr_mode == "building"){
             conv_zoop(x,y);
         }
         
-        obj_placement_mangager(x,y);
+        obj_placement_mangager(x,y, self);
         
         if(curr_obj_being_placed != undefined && string_ends_with(obj_getting_placed, "conv")){
             if(mouse_x >= max_x_placement_round64 && placement_dir == "right"){

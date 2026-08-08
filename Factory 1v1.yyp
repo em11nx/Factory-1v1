@@ -65,6 +65,7 @@
     {"id":{"name":"conv_mk1_turn_2","path":"sprites/conv_mk1_turn_2/conv_mk1_turn_2.yy",},},
     {"id":{"name":"conv_mk1","path":"sprites/conv_mk1/conv_mk1.yy",},},
     {"id":{"name":"iron_vein_tilemap","path":"sprites/iron_vein_tilemap/iron_vein_tilemap.yy",},},
+    {"id":{"name":"item_arrow_idk","path":"sprites/item_arrow_idk/item_arrow_idk.yy",},},
     {"id":{"name":"miner","path":"sprites/miner/miner.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
     {"id":{"name":"temp_iron","path":"sprites/temp_iron/temp_iron.yy",},},
