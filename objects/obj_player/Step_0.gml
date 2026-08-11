@@ -159,5 +159,9 @@ if(curr_mode == "building"){
 
 if(curr_mode == "inventory"){
     inventory_open = true;
+    var layers = layer_get_all();
+    for(var i = 0; i < array_length(layers); i++){
+        show_debug_message(string(layer_get_name(layers[i])) + " | " + string(layer_get_depth(layers[i])));
+    }
 }
 

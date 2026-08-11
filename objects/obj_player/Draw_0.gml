@@ -1,5 +1,5 @@
 draw_sprite(temp_player, 0, x, y);
-draw_tilemap(global.iron_vein_tilemap, 0, 0);
+depth = layer_get_depth("Instances");
 if(curr_mode == "building"){
     draw_arrows();
 }
