@@ -25,10 +25,8 @@ for(var i = 0; i < amount_avabile_vein_slots; i++) {
         cy = (cy - cy % 64) + 32;
     }
     
-    //instance_create_layer(cx, cy, "Instances", obj_iron_ore);
-    
-    global.iron_vein_layer = layer_create(1);
-    global.iron_vein_tilemap = layer_tilemap_create(global.iron_vein_layer, 0, 0, ts_iron_vien, room_width, room_height);
+    global.layer_iron_vein = layer_create(1);
+    global.iron_vein_tilemap = layer_tilemap_create(global.layer_iron_vein, 0, 0, ts_iron_vien, room_width, room_height);
     var rand_tile = irandom_range(1, 5);
     tilemap_set_at_pixel(global.iron_vein_tilemap, rand_tile, cx, cy);
     

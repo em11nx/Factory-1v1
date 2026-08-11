@@ -28,8 +28,7 @@ if(can_move){
         move_ver = 0;
     }
     
-    
-    move_and_collide(move_hor*delta_time/5000, move_ver*delta_time/5000, layer_tilemap_get_id("layer_buildings"));
+    move_and_collide(move_hor*delta_time/5000, move_ver*delta_time/5000, obj_placed_obj);
     
 }
 

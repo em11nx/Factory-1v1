@@ -3,7 +3,6 @@ var outline_size = 4;
 var padding = 4;
 
 if(curr_mode == "building"){
-    draw_arrows();
     
     var num_of_building_preview = array_length(placeable_obj_list);
     var sprite_with_padding_and_outline = (sprite_size + padding*2 + outline_size*2);

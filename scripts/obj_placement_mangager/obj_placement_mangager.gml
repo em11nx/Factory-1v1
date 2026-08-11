@@ -20,7 +20,8 @@ function obj_placement_mangager(pla_x, pla_y, player_id){
                 instance_create_layer(current_x_placement_round64, current_y_placement_round64, "layer_buildings_without_arrows", obj_chest);
             }
             if(obj_getting_placed == "miner"){
-                instance_create_layer(current_x_placement_round64, current_y_placement_round64, "layer_buildings_with_arrows", obj_miner, {image_angle : string_dir_to_num(placement_dir)});
+                instance_create_layer(current_x_placement_round64, current_y_placement_round64,
+                    "layer_buildings_with_arrows", obj_miner, {image_angle : string_dir_to_num(placement_dir)} );
             }
         }
     }
