@@ -21,7 +21,7 @@ function obj_placement_mangager(pla_x, pla_y, player_id){
             }
             if(obj_getting_placed == "miner"){
                 instance_create_layer(current_x_placement_round64, current_y_placement_round64,
-                    "layer_buildings_with_arrows", obj_miner, {image_angle : string_dir_to_num(placement_dir)} );
+                    "layer_buildings_with_arrows", obj_miner, {image_angle : direc_string_to_num(placement_dir)} );
             }
         }
     }
@@ -52,7 +52,7 @@ function ghost_building(x,y, player_id){
             id_obj_temp = instance_create_layer(current_x_placement_round64, current_y_placement_round64, "layer_buildings_with_arrows", shell_obj);
             id_obj_temp.sprite_index = miner;
             id_obj_temp.image_alpha = 0.5;
-            id_obj_temp.image_angle = string_dir_to_num(placement_dir);
+            id_obj_temp.image_angle = direc_string_to_num(placement_dir);
         }
     }
 }
@@ -62,16 +62,10 @@ function draw_arrows(){
     if(array_length(objs) <= 0){ return; }
     for(var i = 0; i < array_length(objs); i++){
         var obj = layer_instance_get_instance(objs[i]);
-        var px = obj.x;
-        var py = obj.y;
-        var angle = 0;
         
-        if(obj.image_angle = 0){ py += obj.sprite_height/1.5; angle = 0; }
-        if(obj.image_angle = 90){ px -= obj.sprite_width/1.5; angle = 270; }
-        if(obj.image_angle = 180){ py -= obj.sprite_height/1.5; angle = 180; }
-        if(obj.image_angle = 270){ px += obj.sprite_width/1.5; angle = 90; }
+        var pv = get_arrow_vector(obj.x, obj.y, obj.image_angle, obj.sprite_width, obj.sprite_height);
         
-        draw_sprite_ext(item_arrow_idk, 0, px, py, 1, 1, angle, c_white, 1);
+        draw_sprite_ext(item_arrow_idk, 0, pv[0], pv[1], 1, 1, pv[2], c_white, 1);
     }
 }
 

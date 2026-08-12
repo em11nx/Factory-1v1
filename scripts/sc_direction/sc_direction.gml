@@ -87,15 +87,23 @@ function get_random_direc(){
     }
 }
 
-function string_dir_to_num(direc){
+function direc_string_to_num(direc){
     switch (direc) {
     	case "down":
             return 0;
         case "left":
-            return 90;
+            return 270;
         case "up":
             return 180;
         case "right":
-            return 270;
+            return 90;
     }
+}
+
+function get_arrow_vector(px, py, angle, width, height){
+    if(angle = 0){ py = py+height/1.5; }
+    if(angle = 90){ px = px+width/1.5; }
+    if(angle = 180){ py = py-height/1.5; }
+    if(angle = 270){ px = px-width/1.5; }
+    return [px, py, angle];
 }

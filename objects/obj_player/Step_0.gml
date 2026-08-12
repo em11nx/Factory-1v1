@@ -104,14 +104,14 @@ if(curr_mode == "building"){
             id_obj_temp = noone;
         }
     }
-    
+    //Fix building ghost move bug
     var overlapping_obj = check_overlap(current_x_placement_round64, current_y_placement_round64, current_sprite_size, obj_placed_obj);
     if(overlapping_obj == noone){
         ghost_building(x,y, self);
     }
     
     if(keyboard_check_pressed(ord("R")) && !mouse_check_button(mb_left)){
-        placement_dir = get_clockwise_direc(placement_dir);
+        placement_dir = get_counterclockwise_direc(placement_dir);
         instance_destroy(id_obj_temp);
         id_obj_temp = noone;
     }
@@ -159,9 +159,5 @@ if(curr_mode == "building"){
 
 if(curr_mode == "inventory"){
     inventory_open = true;
-    var layers = layer_get_all();
-    for(var i = 0; i < array_length(layers); i++){
-        show_debug_message(string(layer_get_name(layers[i])) + " | " + string(layer_get_depth(layers[i])));
-    }
 }
 

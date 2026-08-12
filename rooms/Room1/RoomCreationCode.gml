@@ -1,13 +1,13 @@
 seed = randomise();
 var perption_of_room_that_ore_exists = 1000;
 var rooms_highest_val = (room_width < room_height) ? room_height : room_width;
-var amount_avabile_vein_slots = 5;//rooms_highest_val/perption_of_room_that_ore_exists;
+var amount_avabile_vein_slots = 3*rooms_highest_val/perption_of_room_that_ore_exists;
 var node_size = 15;
 var curr_nodes = [];
 var curr_veins = [];
 
-global.layer_iron_vein = layer_get_id("layer_ts_iron_vein");
-global.iron_vein_tilemap = layer_tilemap_get_id(global.layer_iron_vein);
+global.layer_iron_vein = layer_create(400);
+global.iron_vein_tilemap = layer_tilemap_create(global.layer_iron_vein, 0, 0, ts_iron_vien, room_width, room_height);
 
 for(var i = 0; i < amount_avabile_vein_slots; i++) {
     var cx = irandom(room_width);
