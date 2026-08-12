@@ -1,0 +1,1 @@
+if(instance_place(x,y,obj_conveyor_parent) != being_held_by){ being_held_by = noone; }
