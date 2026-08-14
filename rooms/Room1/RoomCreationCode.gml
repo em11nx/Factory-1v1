@@ -18,8 +18,8 @@ for(var i = 0; i < amount_avabile_vein_slots; i++) {
     
     while(array_contains(curr_veins, string(cx)+","+string(cy))
         && array_length(curr_veins) > 1
-        && abs(int64(string_split(curr_veins[i-1], ",")[0]) - cx) >= int64((node_size/pi)*2)
-        && abs(int64(string_split(curr_veins[i-1], ",")[1]) - cy) >= int64((node_size/pi)*2)){
+        && abs(int64(string_split(curr_veins[i-1], ",")[0]) - cx) <= int64((node_size/pi)*2)
+        && abs(int64(string_split(curr_veins[i-1], ",")[1]) - cy) <= int64((node_size/pi)*2)){
         
         cx = irandom(room_width);
         cy = irandom(room_height);

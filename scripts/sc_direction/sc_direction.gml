@@ -107,3 +107,26 @@ function get_arrow_vector(px, py, angle, width, height){
     if(angle = 270){ px = px-width/1.5; }
     return [px, py, angle];
 }
+
+function get_pos_direc_from_str(dir){
+    if(string_ends_with(dir, "up")){
+        return 90;
+    }
+    if(string_ends_with(dir, "down")){
+        return 270;
+    }
+    if(string_ends_with(dir, "left")){
+        return 180;
+    }
+    if(string_ends_with(dir, "right")){
+        return 0;
+    }
+}
+
+function get_position_vector(px, py, angle, width, height){
+    if(angle = 270){ py = py+height; }
+    if(angle = 0){ px = px+width; }
+    if(angle = 90){ py = py-height; }
+    if(angle = 180){ px = px-width; }
+    return [px, py, angle];
+}
